@@ -1,0 +1,32 @@
+#Tex compiled files
+*.pdf
+*.xml
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.xml
+*.gz
+*.toc
+*.bcf-SAVE-ERROR
+*.out
+*.synctex.gz
+*.synctex(busy)
+*.bbl-SAVE-ERROR
+
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
