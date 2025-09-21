@@ -4,6 +4,17 @@ We are working with the \textit{Bakery Transactions} dataset from Kaggle~\cite{b
 Each row represents an item purchased in a transaction. 
 In total, the dataset includes around 20,500 records and meets the requirement of having more than 1,000 rows for association rule mining.  
 
+\subsection*{Data type}
+The Bakery Transactions dataset is an example of \textbf{structured data}, 
+since it is stored in a tabular CSV format with clearly defined attributes such as 
+TransactionNo, Items, DateTime, Daypart, and DayType.  
+Most of the attributes are categorical (e.g., Items, Daypart, DayType), 
+while DateTime is temporal.  
+There are no numerical features of direct analytical interest, aside from identifiers 
+or indices such as TransactionNo.  
+This makes the dataset particularly well-suited for association rule mining, 
+where categorical transaction data is required.
+
 \subsection*{Main attributes in the dataset}
 \begin{itemize}
     \item \textbf{TransactionNo:} A unique identifier for each transaction.  
