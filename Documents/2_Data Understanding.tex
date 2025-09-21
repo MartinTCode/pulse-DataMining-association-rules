@@ -1,1 +1,51 @@
 \label{chap:data-understanding}
+
+We are working with the \textit{Bakery Transactions} dataset from Kaggle~\cite{bakerydata}, which contains detailed point-of-sale records from a bakery between January 2016 and December 2017. 
+Each row represents an item purchased in a transaction. 
+In total, the dataset includes around 20,500 records and meets the requirement of having more than 1,000 rows for association rule mining.  
+
+\subsection*{Main attributes in the dataset}
+\begin{itemize}
+    \item \textbf{TransactionNo:} A unique identifier for each transaction.  
+    Range: 2,552 to 9,684.  
+    Mean: $\sim$4,980 with a standard deviation of $\sim$2,800.  
+    No missing or mismatched values.  
+
+    \item \textbf{Items:} The products purchased in each transaction.  
+    There are 94 unique items.  
+    The most common product is \textit{Coffee} (27\%), followed by \textit{Bread} (16\%).  
+
+    \item \textbf{DateTime:} The timestamp of each transaction.  
+    Range: 11 Jan 2016 to 3 Dec 2017.  
+    % TODO: Add explanation about range differences in DateTime once calculated
+    \textbf{FILL IN range differences!!!! CANT BE READ RELIABLY FROM SOURCE GRAPH.}
+    No missing values.  
+
+    \item \textbf{Daypart:} Indicates the part of the day when the transaction occurred (Morning, Afternoon, Evening, Night).  
+    Most transactions occurred in the Afternoon (56\%) and Morning (41\%).  
+    Very few happened in the evening or night, which makes sense for a bakery.  
+
+    \item \textbf{DayType:} Classifies each transaction as a Weekday (62\%) or Weekend (38\%).  
+    At first glance this suggests that most purchases happen during the workweek. 
+    However, since weekdays cover five days and weekends only two, the comparison is not direct
+
+\end{itemize}
+
+\subsection*{Initial observations}
+The dataset is clean, with no missing or mismatched values.  
+Item names are already standardized (e.g., ``Coffee'' is consistently spelled), 
+so only minimal preprocessing will be needed.  
+Coffee and bread are the most common items, 
+which we expect to appear strongly in the association rules.  
+
+The temporal attributes also add context: most transactions take place in the morning and afternoon, which fits the business of a bakery.  
+The weekday/weekend split (62\% vs.\ 38\%) should be interpreted with caution, since weekdays cover five days while weekends only two.  
+If we average these proportions over the number of days, this corresponds to roughly $62 \div 5 \approx 12.4\%$ of weekly transactions per weekday and $38 \div 2 \approx 19.0\%$ per weekend day.  
+This suggests that weekends might have relatively higher activity on a per-day basis, although this is only an initial observation.  
+A more detailed analysis would be needed to confirm this, since transaction volume may not be evenly distributed across weekdays (e.g., Mondays could have many more transactions than other weekdays).
+ 
+
+Overall, the dataset is well-suited for market basket analysis.  
+It not only allows us to study which items are bought together but also provides additional 
+information about when purchases occur 
+(time of day, weekday/weekend), which could be explored in further analysis.
