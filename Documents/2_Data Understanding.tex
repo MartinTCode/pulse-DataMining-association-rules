@@ -32,8 +32,10 @@ and co-occurrence patterns in transaction data~\cite[Ch.~5, Sec.~5.1]{courseLitt
     No missing or mismatched values.  
 
     \item \textbf{Items:} The products purchased in each transaction.  
-    There are 94 unique items.  
-    The most common product is \textit{Coffee} (27\%), followed by \textit{Bread} (16\%).  
+There are 94 unique items, consistently capitalized and without duplicate spellings.  
+However, some categories overlap semantically (e.g., ``Sandwich'' vs.\ ``Chicken sand''), 
+and several products are expressed as multi-word names.  
+The most common product is \textit{Coffee} (27\%), followed by \textit{Bread} (16\%).  
 
     \item \textbf{DateTime:} The timestamp of each transaction.  
     Range: 11 Jan 2016 to 3 Dec 2017.  
@@ -52,9 +54,9 @@ and co-occurrence patterns in transaction data~\cite[Ch.~5, Sec.~5.1]{courseLitt
 \end{itemize}
 
 \subsection*{Initial observations}
-The dataset is clean, with no missing or mismatched values.  
-Item names are already standardized (e.g., ``Coffee'' is consistently spelled), 
-so only minimal preprocessing will be needed.  
+TThe dataset is clean, with no missing or mismatched values.  
+Item names are fairly standardized (94 unique values, consistently capitalized), 
+though a few categories overlap semantically (e.g., ``Sandwich'' vs.\ ``Chicken sand'').  
 Coffee and bread are the most common items, 
 which we expect to appear strongly in the association rules.  
 
