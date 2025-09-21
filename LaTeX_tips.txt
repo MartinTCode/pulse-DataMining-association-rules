@@ -1,4 +1,4 @@
-How2UseLabels:
+>>>>How2UseLabels:
 
 examples:
 See Chapter \ref{chap:abstract} for a brief overview.
@@ -6,3 +6,70 @@ See Chapter \ref{chap:abstract} for a brief overview.
 As discussed in Chapter \ref{chap:data-preprocessing}, the data required cleaning...
 
 The methodology (Chapter \ref{chap:modeling}) and its evaluation (Chapter \ref{chap:evaluation}) show...
+
+
+>>>>How2UseLists
+
+\begin{enumerate}
+    \item \textbf{Data availability:} The Google Maps API offers accessible and structured data on restaurants,
+    including ratings, number of reviews, price level and geographical location. This availability of data
+    is essential for conducting a thorough analysis.
+    \item \textbf{Relevance and interest:} Dining is both culturally and economically significant in Stockholm.
+    This makes the restaurant sector a relevant and interesting area for analysis. Patterns in ratings,
+    locations and pricing may provide insights into consumer behavior and market trends.
+    \item \textbf{Potential business insights:} By analyzing correlations in the dataset, restaurants and 
+    stakeholders could learn more about factors that can influence customer satisfaction and popularity.
+    For example, correlations between proce levels and ratings might provide insight into percieved 
+    value for money.
+\end{enumerate}
+
+
+>>>>How2UseTables (& how to escape special chars):
+For our analysis, we selected the following attributes and configured their data types
+as shown in Table~\ref{tab:attribute_config}:
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|l|l|p{5cm}|}
+    \hline
+    \textbf{Attribute} & \textbf{Type} & \textbf{Interpreted As} & \textbf{Description} \\
+    \hline
+    rating & numeric & integer & Star rating from 1-5 \\
+    \hline
+    reviews & numeric & real & Count of customer reviews \\
+    \hline
+    derived\_price\_level & numeric & real & Our consolidated price indicator \\
+    \hline
+    distance\_km & numeric & real & Distance from city center, calculated from coordinates \\
+    \hline
+    \end{tabular}
+    \caption{Selected attributes and their configurations in RapidMiner}
+    \label{tab:attribute_config}
+\end{table}
+
+
+>>>>How2InsertFigures/Pictures:
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Figures/API_Crawl_script_command.png}
+    \caption{Data collection script parameters showing grid step, radius, and distance constraints}
+    \label{fig:data_collection_parameters}
+\end{figure}
+
+
+>>>> How2WriteBold_and_Italics:
+
+The implementation was carried out in both Altair RapidMiner and Knime. In RapidMiner, this was done
+using the \textit{Correlation Matrix} operator,
+
+
+\textbf{Data availability:}
+
+
+
+>>>> How2WriteMathSnippets:
+
+For entries with missing price\_level but available price ranges, we derived 
+comparable levels using SEK thresholds ($\leq150 = 1$, $\leq300 = 2$, 
+$\leq600 = 3$, $>600 = 4$).
