@@ -1,11 +1,11 @@
 >>>>How2UseLabels:
 
 examples:
-See Chapter \ref{chap:abstract} for a brief overview.
+See Chapter \nameref{chap:abstract} for a brief overview.
 
-As discussed in Chapter \ref{chap:data-preprocessing}, the data required cleaning...
+As discussed in Chapter \nameref{chap:data-preprocessing}, the data required cleaning...
 
-The methodology (Chapter \ref{chap:modeling}) and its evaluation (Chapter \ref{chap:evaluation}) show...
+The methodology (Chapter \nameref{chap:modeling}) and its evaluation (Chapter \nameref{chap:evaluation}) show...
 
 
 >>>>How2UseLists
