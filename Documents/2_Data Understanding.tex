@@ -1,25 +1,32 @@
 \label{chap:data-understanding}
 
-We are working with the \textit{Bakery Transactions} dataset from Kaggle~\cite{bakerydata}, which contains detailed point-of-sale records from a bakery between January 2016 and December 2017. 
-Each row represents an item purchased in a transaction. 
-In total, the dataset includes around 20,500 records and meets the requirement of having more than 1,000 rows for association rule mining.  
+We are working with the \textit{Bakery Transactions} dataset from Kaggle~\cite{bakerydata}, 
+which contains detailed point-of-sale records from a bakery between January 2016 and December 2017. 
+Each row represents a single item purchased, and multiple rows can belong to the same transaction.  
+In total, the dataset includes around 20,500 records and meets the requirement of having more than 
+1,000 rows for association rule mining.  
 
 \subsection*{Data type}
-The Bakery Transactions dataset is an example of \textbf{structured data}, 
-since it is stored in a tabular CSV format with clearly defined attributes such as 
-TransactionNo, Items, DateTime, Daypart, and DayType.  
-Most of the attributes are categorical (e.g., Items, Daypart, DayType), 
-while DateTime is temporal.  
-There are no numerical features of direct analytical interest, aside from identifiers 
-or indices such as TransactionNo.  
-This makes the dataset particularly well-suited for association rule mining, 
-an \textbf{unsupervised learning} technique that requires categorical transaction 
-data to identify frequent itemsets and co-occurrence patterns.
-% TODO: Add source from book. 
+The Bakery Transactions dataset is \textbf{structured}, 
+stored in CSV format where each row corresponds to an item purchase, 
+linked to a transaction via the \texttt{TransactionNo} attribute.  
+Multiple rows can share the same transaction identifier, meaning that a single 
+basket may contain several products.  
+Basket sizes range from 1 to 11 items. 
+According to Tan et al.~\cite[Ch.~2, Sec.~2.1.2]{courseLitt}, 
+this corresponds to \textit{transaction data} (market basket data), 
+a special type of record data.  
+Most attributes are categorical, consistent with the definition of nominal 
+attributes~\cite[Ch.~2, Sec.~2.1.1]{courseLitt}.  
+This structure makes the dataset well-suited for association rule mining, 
+an \textbf{unsupervised learning} technique that discovers frequent itemsets 
+and co-occurrence patterns in transaction data~\cite[Ch.~5, Sec.~5.1]{courseLitt}.
+
 
 \subsection*{Main attributes in the dataset}
 \begin{itemize}
-    \item \textbf{TransactionNo:} A unique identifier for each transaction.  
+    \item \textbf{TransactionNo:} An identifier that groups together all items in the same basket (transaction).  
+    Basket sizes range from 1 to 11 items.  
     Range: 2,552 to 9,684.  
     Mean: $\sim$4,980 with a standard deviation of $\sim$2,800.  
     No missing or mismatched values.  
