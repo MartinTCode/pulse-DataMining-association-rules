@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper]{report}
+\documentclass[12pt,a4paper,notitlepage]{report}
 \usepackage[english]{babel} 
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
@@ -32,12 +32,15 @@
 
 \begin{document}
 
+\pagenumbering{roman}
 \maketitle
 
 \input{Documents/0_Abstract}
 \input{Documents/0_Highlights}
 
 \tableofcontents
+\clearpage
+\pagenumbering{arabic}
 
 \chapter{Phase I: Business Understanding}
 \input{Documents/1_Business Understanding}
