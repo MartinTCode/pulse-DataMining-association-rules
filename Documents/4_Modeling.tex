@@ -6,15 +6,16 @@ association rule mining. This technique discovers frequent patterns, which form 
 between items in the dataset, and are then expressed as association rules. The rules will
 be of the form: If customer buys product A, the customer is likely to also buy product B.
 The rule comes with a certain support (frequence of an item or itemset in the entire dataset)
-and confidence (the probability to find product B in a basket already containing product A).
+and confidence (the probability to find product B in a basket already containing product A), which 
+quantifies its strength ~\cite[Ch.~5, Sec.~5.2]{courseLitt}.
 
 The structured dataset consists of 94 unique items and over 20,000 entries in about 9,000 transactions.
 This technique is suitable for this task since the dataset consists of transactional data with
 multiple items per basket and we will be able to analyse any existing relations between
 transactions (baskets) and items. 
 
-The technique of association rule mining was implemented in Altair RapidMiner using a combination
-of operators FP-Growth and Create Association Rules and in Knime using node Association Rule Learner.
+The technique of association rule mining was implemented in Altair RapidMiner ~\cite{RapidMiner} using a combination
+of operators FP-Growth and Create Association Rules and in Knime ~\cite{Knime} using node Association Rule Learner.
 Identical input and configuration of support-, and confidence level was used in both tools to be
 able to analyse the outcome and find similarity and differences between the two.
 
@@ -23,10 +24,11 @@ The Bakery Transaction dataset csv-file was imported into RapidMiner with the op
 followed by Select Attributes. The operator Aggregate transforms the entries for every item into
 a baskets with a collection of items with the same transaction number. When the baskets are formed
 the attribute TransactionNo is no longer useful and therefore excluded in a second Select Attributes
-to complete the preprocessing, keeping only the aggregated baskets for analyse. The operator FP-Growth
-identifies frequent patterns among the basket content, depending on the configurated support and
-finally the operator Create Association Rules, forms rules for the relation between items, depending
-on the configured confidence.
+to complete the preprocessing, keeping only the aggregated baskets for analyse. This step prepared 
+the data for association rule mining in line with preprocessing requirements discussed in 
+~\cite[Ch.~3, Sec.~3.3]{courseLitt}. The operator FP-Growth identifies frequent patterns among the basket content, 
+depending on the configurated support and finally the operator Create Association Rules, forms rules for 
+the relation between items, depending on the configured confidence ~\cite[Ch.~5, Sec.~5.2]{courseLitt}.
 
 \begin{figure}[H]
 \centering
@@ -49,7 +51,9 @@ last node.
 
 \section{Modeling results}
 We tested three different support values combined with a fixed confidence value to determine which
-one was most appropriate to use, giving a reasonable number of association rules.
+one was most appropriate to use, giving a reasonable number of association rules. As Tan et 
+al. ~\cite[Ch.~5, Sec.~5.3]{courseLitt} emphasize, selecting appropriate thresholds for support and confidence 
+is a critical part of association rule mining
 
 Confidence (fixed): 0,5
 Support:
