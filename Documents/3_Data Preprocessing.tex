@@ -1,11 +1,13 @@
 \label{chap:data-preprocessing}
-In this assignment, no preprocessing was performed on the dataset prior to importing it into RapidMiner and Knime. 
-Instead, preprocessing was carried out within the workflow of each program. 
+In this assignment, no preprocessing was performed on the dataset prior to importing it into RapidMiner  ~\cite{RapidMiner} 
+and Knime ~\cite{Knime}. Instead, preprocessing was carried out within the workflow of each program. This is consistent with the 
+CRISP-DM process model, where preprocessing is typically applied before modeling ~\cite[Ch.~3]{courseLitt}.
 
-In RapidMiner after importing the data, we selected the relevant attributes. 
+In RapidMiner ~\cite{RapidMiner} after importing the data, we selected the relevant attributes. 
 Since only TransactionNo and Items were needed for the analysis, DayTime, Daypart and DayType were excluded. 
-The aggregate operator was then applied to concatenate Items. After this step, another attribute selection was performed to exclude TransactionNo and only keep the concatenated Items. 
+The aggregate operator was then applied to concatenate Items. After this step, another attribute selection 
+was performed to exclude TransactionNo and only keep the concatenated Items. 
 
-In Knime after importing the data, a column filter operator was used to exclude DayTime, Daypart and DayType so that only TransactionNo and Items are included. 
-The GroupBy operator was then applied, using the TransactionNo as the group column and aggregating the Items with the Set function. 
-Hilda
+In Knime ~\cite{Knime} after importing the data, a column filter operator was used to exclude DayTime, Daypart and DayType 
+so that only TransactionNo and Items are included. The GroupBy operator was then applied, using the TransactionNo 
+as the group column and aggregating the Items with the Set function. 
