@@ -1,3 +1,47 @@
 \label{chap:answer-to-questions}
 
-Anna
+\section*{What rules did you find?}
+The association rules discovered in our analysis showed several consistent patterns. The strongest and most 
+reliable rule was the link between Toast and Coffee, with a confidence of over 70\% and a support of 2.4\%. 
+This means that whenever Toast was purchased, Coffee was very likely to be present in the same basket. Both 
+RapidMiner and Knime arrived at this rule, even though RapidMiner also produced a larger set of additional 
+rules under the same parameter configuration. These additional rules included combinations such as Cake with 
+Hot Chocolate leading to Coffee, Salad leading to Coffee, and the product Keeping It Local leading to 
+Coffee with high confidence.
+
+
+\section*{What attributes are most strongly associated?}
+Coffee dominated as the consequent in most rules, which is not surprising given that it is the most common 
+product in the dataset. What makes the association with Toast stand out is that it was found consistently 
+across both RapidMiner and Knime with strong support and confidence. This repeated detection suggests that 
+the relationship is not random but rather reflects a genuine purchasing habit. Other attributes such as Cake, 
+Hot Chocolate, and Salad also appeared in rules, but only when combined with other items. Their associations 
+were less frequent and not as robust. Overall, the strongest and most reliable association was between Toast 
+and Coffee, making these two attributes the most strongly linked in the dataset.
+
+
+\section*{Are there products frequently connected that surprise you? Why?}
+Some associations were less expected, particularly the link between Salad and Coffee. At first glance, these 
+items do not seem like a natural pair, but the rule may reflect that customers who purchase a lighter meal 
+often add a hot drink to complete their order. Another interesting result was the combination of Cake and Hot 
+Chocolate leading to Coffee. Even when a beverage was already included in the basket, customers sometimes still 
+purchased Coffee, possibly because they were buying for multiple people or preferred to have both options. 
+These patterns highlight how association rule mining can uncover connections that are not immediately intuitive 
+and may not be predicted without a data-driven approach.
+
+
+\section*{How much did you have to test different support and confidence values before finding useful rules?}
+Finding useful rules required several iterations with different support and confidence thresholds. At high 
+support values the ruleset was too small and contained only trivial relations, while at very low support 
+levels the ruleset became too large and unfocused. After testing three different support thresholds and 
+adjusting the confidence range, we settled on the combination that produced a manageable number of meaningful 
+rules. This process reflects the trial-and-error nature of association rule mining, where parameters must be 
+tuned to balance coverage and interpretability.
+
+
+\section*{Were any of your rules good enough to base decisions on? Why or why not?}
+In terms of business value, some rules were strong enough to guide decisions. The Toast and Coffee rule, for 
+example, could directly motivate bundle deals or adjustments in product placement. Other rules, while statistically 
+valid, mainly confirmed what would already be expected from everyday experience at a bakery. Even so, such 
+confirmations are valuable as they provide evidence that the dataset reflects realistic purchasing behaviour. 
+Together, the rules form a basis for recommendations that the bakery could consider implementing in practice.
