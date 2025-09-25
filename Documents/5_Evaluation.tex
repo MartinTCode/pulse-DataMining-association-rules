@@ -1,38 +1,32 @@
 \label{chap:evaluation}
 
-The results of our association rule mining were evaluated by examining both the statistical 
-measures and the practical implications of the rules. When experimenting with different support 
-thresholds, we observed that a support of 0.1 produced only a handful of rules, most of which 
-were too obvious to be useful. On the other hand, lowering the support to 0.001 led to a flood 
-of trivial rules where nearly every weak co-occurrence was counted. A more balanced setting 
-was achieved with a support of 0.01 combined with a confidence of 0.6, which yielded a reasonable 
-number of interpretable rules.
+When experimenting with different support thresholds, we observed that a support of 0.1 produced only a handful of 
+rules, most of which were too obvious to be useful. On the other hand, lowering the support to 0.001 led to a flood 
+of trivial rules where nearly every weak co-occurrence was counted. A more balanced setting was achieved with a 
+support of 0.01 combined with a confidence of 0.6, which yielded a reasonable number of interpretable rules. This 
+is consistent with Tan et al.~\cite[Ch.~4]{courseLitt}, who emphasize that support and confidence must be tuned to 
+balance coverage and usefulness.  
 
-Among these, the most consistent and interesting rule was the relation between Toast and Coffee. 
-Both RapidMiner and Knime identified this pattern: if a customer buys Toast, there is a 
-70.4\% chance that they will also buy Coffee. The rule had a support of 0.024, meaning that 
-2.4\% of all transactions contained this combination. While Coffee appeared in many rules due to 
-its overall popularity in the dataset, the repeated identification of Toast as a strong antecedent 
-gave this rule particular credibility. It demonstrates a clear and actionable relationship that 
-the bakery could use for bundle offers or product placement.
+Among these, the most consistent and interesting rule was the relation between Toast and Coffee. Both RapidMiner 
+and Knime identified this pattern: if a customer buys Toast, there is a 70.4\% chance that they will also buy 
+Coffee. The rule had a support of 0.024, meaning that 2.4\% of all transactions contained this combination. While 
+Coffee appeared in many rules due to its overall popularity in the dataset, the repeated identification of Toast 
+as a strong antecedent gave this rule particular credibility. It demonstrates a clear and actionable relationship 
+that the bakery could use for bundle offers or product placement. Similar dominance of popular items is also 
+discussed by Tan et al.~\cite[Ch.~4]{courseLitt}, who caution that highly frequent items often drive many rules but 
+may not always provide new insight.  
 
-Other rules, such as the combinations of Cake with Hot Chocolate leading to Coffee, or Salad 
-leading to Coffee, were also detected. These highlight more subtle customer behaviours, although 
-some of them are less intuitive. For example, Salad being linked with Coffee may reflect that 
-customers who buy a light meal often also add a beverage. However, rules involving very common 
-items like Coffee and Bread tend to dominate the analysis, which makes it difficult to highlight 
-more unexpected patterns. This limitation is common in market basket analysis and underscores 
-the need for careful interpretation.
+Other rules, such as the combinations of Cake with Hot Chocolate leading to Coffee, or Salad leading to Coffee, 
+were also detected. These highlight more subtle customer behaviours, although some of them are less intuitive. 
+For example, Salad being linked with Coffee may reflect that customers who buy a light meal often also add a 
+beverage. However, rules involving very common items like Coffee and Bread tend to dominate the analysis, which 
+makes it difficult to highlight more unexpected patterns. This limitation is common in market basket analysis and 
+is described by Tan et al.~\cite[Ch.~4]{courseLitt} as a key challenge in finding “interesting” patterns beyond 
+frequency-based rules.  
 
-An important observation during the evaluation was the difference between the two tools. RapidMiner 
-tended to generate a larger set of rules compared to Knime under identical settings, while 
-Knime was stricter and only reproduced the strongest patterns. Despite these differences, the 
-tools consistently agreed on the key finding, which increases confidence in the robustness of 
-the results.
-
-Although association rules are valuable for identifying co-occurrences, it is also important to 
-recognise their limitations. They do not explain why two items appear together and cannot 
-establish causation. Nevertheless, in the context of a bakery, the discovered rules still provide 
-relevant and actionable insights that can guide decisions about marketing campaigns, store layout, 
-and product bundling.
+Although association rules are valuable for identifying co-occurrences, it is also important to recognise their 
+limitations. They do not explain why two items appear together and cannot establish causation. As Tan et 
+al.~\cite[Ch.~4]{courseLitt} note, association rules describe correlation, not causality. Nevertheless, in the 
+context of a bakery, the discovered rules still provide relevant and actionable insights that can guide decisions 
+about marketing campaigns, store layout, and product bundling.  
 
