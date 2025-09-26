@@ -40,9 +40,13 @@ The most common product is \textit{Coffee} (27\%), followed by \textit{Bread} (1
 
     \item \textbf{DateTime:} The timestamp of each transaction.  
     Range: 11 Jan 2016 to 3 Dec 2017.  
-    % TODO: Add explanation about range differences in DateTime once calculated
-    \textbf{FILL IN range differences!!!! CANT BE READ RELIABLY FROM SOURCE GRAPH.}
     No missing values.  
+    Transaction volume was not evenly distributed: the period from 
+    November 2016 to March 2017 concentrated nearly 64\% of all orders, 
+    while the surrounding months (Jan--Oct 2016 and Apr--Dec 2017) 
+    accounted for less than 36\% combined.  
+    This strong seasonality indicates that the bakery experienced 
+    a pronounced high-demand span followed by lower activity.  
 
     \item \textbf{Daypart:} Indicates the part of the day when the transaction occurred (Morning, Afternoon, Evening, Night).  
     Most transactions occurred in the Afternoon (56\%) and Morning (41\%).  
@@ -62,18 +66,24 @@ though a few categories overlap semantically (e.g., ``Sandwich'' vs.\ ``Chicken 
 Coffee and bread are the most common items, 
 which we expect to appear strongly in the association rules.  
 
-The temporal attributes also add context: most transactions take place in the morning and afternoon, which fits the business of a bakery.  
-The weekday/weekend split (62\% vs.\ 38\%) should be interpreted with caution, since weekdays cover five days while weekends only two.  
-If we average these proportions over the number of days, this corresponds to roughly $62 \div 5 \approx 12.4\%$ of weekly transactions per weekday and $38 \div 2 \approx 19.0\%$ per weekend day.  
-This suggests that weekends might have relatively higher activity on a per-day basis, although this is only an initial observation.  
-A more detailed analysis would be needed to confirm this, since transaction volume may not be evenly distributed across weekdays (e.g., Mondays could have many more transactions than other weekdays).
- 
+The temporal attributes reveal important context.  
+Most transactions occurred in the morning and afternoon, which aligns with 
+typical bakery operations.  
+The weekday/weekend split (62\% vs.\ 38\%) must be interpreted with care: 
+on a per-day basis, weekends represent a larger share 
+($\sim$19\% per day vs.\ $\sim$12\% per weekday).  
+More notably, transaction volume shows strong seasonality: 
+a pronounced peak between November 2016 and March 2017 
+concentrated almost two-thirds of all orders, 
+while the rest of the months together accounted for just over one-third.  
+This suggests external factors such as holidays, local conditions, 
+or promotions likely influenced customer behavior.  
 
 Overall, the dataset is well-suited for market basket analysis.  
-It not only allows us to study which items are bought together but also provides additional 
-information about when purchases occur 
-(time of day, weekday/weekend), which could be explored in further analysis.
+It not only enables the discovery of co-purchase patterns 
+but also provides temporal context (time of day, weekday/weekend, 
+and seasonal variation), which could be leveraged in further analysis. 
 
-These patterns will provide the basis for identifying associations that can inform 
+These patterns can provide the basis for identifying associations that can inform 
 the bakery's marketing, layout, and inventory planning decisions 
 (see \nameref{chap:business-understanding}).
